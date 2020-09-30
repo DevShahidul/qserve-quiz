@@ -93,13 +93,13 @@ export const theme = {
 
     // Common style property
     common: {
-        boxShadow: '0 10px 20px 0 rgba(0, 0, 0, 0.3), 0 2px 4px 0 rgba(0, 0, 0, 0.3)',
+        boxShadow: '0 10px 20px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1)',
         gradientColor: 'linear-gradient(to top, #4fb6fc, #027adb)'
     },
 
     // Header style property
     header: {
-        padding: '10px 20px',
+        padding: '10px',
         background: '#f2f2f2',
         color: '#a2a2a2',
         fontSize: '16px',
@@ -114,10 +114,17 @@ export const theme = {
             primaryLight: '#5b626c',
         },
         arrowSize: '12px',
-        link:{
-            fontSize: '12px',
-            padding: '5px 10px',
+        dropdownWrapper: {
+            top: '17px',
             background: '#ffffff',
+            radius: '0 0 4px 4px',
+            minWidth: '120px'
+        },
+        link:{
+            fontSize: '14px',
+            padding: '7px 15px',
+            hoverBg: '#f2f2f2',
+            border: '#ededed'
         }
     },
 
