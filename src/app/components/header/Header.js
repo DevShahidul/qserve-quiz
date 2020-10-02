@@ -12,10 +12,12 @@ import {
     ArrowIconWrap,
     Dropdown,
     DropdownItem,
-    DropDownLink
+    DropDownLink,
+    QzCtrlToggler,
+    QzCtrlTogglerIcon
 } from './Header.element';
 
-export const Header = () => {
+export const Header = ({clickToggleQzCtrl, handleQzctrlToggler}) => {
     const [click, setClick] = useState(false);
     const handleClick = () => setClick(!click)
     return (
@@ -40,6 +42,9 @@ export const Header = () => {
                         </DropdownItem>
                     </Dropdown>
                 </User>
+                <QzCtrlToggler onClick={handleQzctrlToggler}>
+                    <QzCtrlTogglerIcon clickToggleQzCtrl={clickToggleQzCtrl} />
+                </QzCtrlToggler>
             </HeaderContainer>
         </HeaderWrap>
     )

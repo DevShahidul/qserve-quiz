@@ -1,12 +1,13 @@
 import styled, {createGlobalStyle} from 'styled-components';
 import themeProp from './components/utils/teme';
-import {theme} from './app/theme/default_theme';
+import { theme } from './app/theme/default_theme';
 import { transition } from './components/utils/style-util';
 
 const {
     body,
     heading,
-    inputField
+    inputField,
+    button
 } = theme;
 
 export const GlobalStyle = createGlobalStyle`
@@ -21,6 +22,7 @@ export const GlobalStyle = createGlobalStyle`
         font-size: ${body.fontSize};
         font-weight: ${body.fontWeight};
         color: ${body.primaryLight};
+        letter-spacing: .2px;
     }
     
     ul{
@@ -32,38 +34,39 @@ export const GlobalStyle = createGlobalStyle`
         display: inline-block;
     }
 
+    h1,h2,h3,h4,h5,h6{
+        color: ${heading.color};
+        line-height: 1.3;
+        font-weight: ${heading.fontWeight};
+    }
+
+    h1{
+        font-size: ${heading.h1.fontSize};
+        line-height: 1.4;
+    }
+
     h2{
         font-size: ${heading.h2.fontSize};
-        line-height: 1.4;
-        color: ${heading.color};
         font-weight: ${heading.h2.fontWeight};
     }
 
     h3{
         font-size: ${heading.h3.fontSize};
-        line-height: 1.3;
-        color: ${heading.color};
         font-weight: ${heading.h3.fontWeight};
     }
 
     h4{
         font-size: ${heading.h4.fontSize};
-        line-height: 1.3;
-        color: ${heading.color};
         font-weight: ${heading.h4.fontWeight};
     }
 
     h5{
         font-size: ${heading.h5.fontSize};
-        line-height: 1.3;
-        color: ${heading.color};
         font-weight: ${heading.h5.fontWeight};
     }
 
     h6{
         font-size: ${heading.h6.fontSize};
-        line-height: 1.3;
-        color: ${heading.color};
         font-weight: ${heading.h6.fontWeight};
     }
 
@@ -83,17 +86,39 @@ export const GlobalStyle = createGlobalStyle`
 
 `;
 
+const Transition = transition('.3');
+
+export const ButtonStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '45px',
+    minWidth: '80px',
+    textAlign: 'center',
+    padding: `${button.padding}`,
+    border: 0,
+    borderRadius: `${button.btnRadius}`,
+    backgroundColor: `${button.background}`,
+    color: `${button.color}`,
+    fontSize: `${button.fontSize}`,
+    cursor: 'pointer',
+    Transition
+}
+
+export const ButtonHoverStyle = {
+    backgroundColor: `${button.hoverBackground}`
+}
+
 export const Container = styled.div`
     width: 100%;
-    max-width: 1270px;
+    max-width: ${themeProp('common', 'containerWidth')};
     margin-right: auto;
     margin-left: auto;
-    padding-right: 30px;
-    padding-left: 30px;
-    font-size: ${themeProp('fonts.size', 'xl')};
-    @media only screen and (min-width: 992px){
-        padding-right: 50px;
-        padding-left: 50px;
+    padding-right: 50px;
+    padding-left: 50px;
+    @media only screen and (max-width: 991px){
+        padding-right: 30px;
+        padding-left: 30px;
     }
 `;
 

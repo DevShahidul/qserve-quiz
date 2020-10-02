@@ -15,6 +15,8 @@ export const HeaderWrap = styled.header `
     background-color: ${themeProp('header', 'background')};
     color: ${themeProp('header', 'color')};
     font-size: ${themeProp('header', 'fontSize')};
+    position: relative;
+    z-index: 999;
 `;
 
 // Header container
@@ -22,7 +24,7 @@ export const HeaderContainer = styled(Container)`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    ${Container}
+    ${Container};
 `;
 
 
@@ -63,6 +65,7 @@ export const UserIcon = styled(FaUserAlt)`
     color: ${themeProp('user.color', 'primary')};
 `;
 
+// Arrow icon wrapper 
 export const ArrowIconWrap = styled.div`
     display: flex;
     align-items: center;
@@ -70,6 +73,7 @@ export const ArrowIconWrap = styled.div`
     margin-left: 5px;
 `;
 
+// Dropdown wrapper
 export const Dropdown = styled.ul`
     position: absolute;
     right: 0;
@@ -84,6 +88,7 @@ export const Dropdown = styled.ul`
     ${transition('.3')}
 `;
 
+// Dropdown item list
 export const DropdownItem = styled.li`
     display: block;
     width: 100%;
@@ -94,6 +99,7 @@ export const DropdownItem = styled.li`
     }
 `;
 
+// Dropdown item link
 export const DropDownLink = styled(Link)`
     display: block;
     width: 100%;
@@ -105,5 +111,47 @@ export const DropDownLink = styled(Link)`
     &:hover{
         background-color: ${themeProp('user.link', 'hoverBg')};
         color: ${themeProp('user.color', 'primaryLight')}
+    }
+`;
+
+// Quiz controls Toggler
+export const QzCtrlToggler = styled.div`
+    align-items: center;
+    justify-content: center;
+    width: ${themeProp('qzcontrols', 'togglerWidth')};
+    height: ${themeProp('qzcontrols', 'togglerHeight')};
+    position: relative;
+    margin-left: 1rem;
+    cursor: pointer;
+    display: none;
+    @media only screen and (max-width: 767px){
+        display: flex;
+    }
+`;
+
+// Quiz controls Toggler icon
+export const QzCtrlTogglerIcon = styled.div `
+    position: relative;
+    width: ${themeProp('qzcontrols', 'togglerWidth')};
+    height: 2px;
+    background-color: ${({ clickToggleQzCtrl }) => (clickToggleQzCtrl ? 'transparent' : 'currentColor')};;
+    color: ${themeProp('qzcontrols', 'iconColor')};
+    ${transition('0.6')};
+    &::after,
+    &::before{
+       content: "";
+       width: 27px;
+       height: 2px;
+       position: absolute;
+       background-color: currentColor;
+       ${transition('0.6')}; 
+    };
+    &::before{
+        margin-top: ${({ clickToggleQzCtrl }) => (clickToggleQzCtrl ? '0' : '7px')};
+        transform: rotate(${({ clickToggleQzCtrl }) => (clickToggleQzCtrl ? '-45deg' : '0deg')});
+    }
+    &::after{
+        margin-top: ${({ clickToggleQzCtrl }) => (clickToggleQzCtrl ? '0' : '-7px')};
+        transform: rotate(${({ clickToggleQzCtrl }) => (clickToggleQzCtrl ? '45deg' : '0deg')});
     }
 `;

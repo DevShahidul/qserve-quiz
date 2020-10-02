@@ -1,38 +1,32 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import themeProp from '../../utils/teme';
-import { transition } from '../../utils/style-util';
+//import PropTypes from 'prop-types';
+//import themeProp from '../../utils/teme';
+import { ButtonStyle, ButtonHoverStyle } from '../../../globalStyles';
 
 const Button = styled.button`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 60px;
-    min-width: 140px;
-    text-align: center;
-    padding: ${themeProp('button', 'padding')};
-    border-radius: ${themeProp('button', 'btnRadius')};
-    background-color: ${themeProp('button', 'background')};
-    color: ${themeProp('button', 'color')};
-    font-size: ${themeProp('button', 'fontSize')};
-    ${transition};
+    ${ButtonStyle};
     &:hover{
-        background-color: ${themeProp('button', 'hoverBackground')}
+        background-color: ${ButtonHoverStyle}
+    }
+    &:hover,
+    &:active,
+    &:focus{
+        outline: none;
     }
 `;
 
-Button.propTypes = {
-    block: PropTypes.bool,
-    color: PropTypes.string,
-    size: PropTypes.string,
-    outline: PropTypes.bool
-};
+// Button.propTypes = {
+//     block: PropTypes.bool,
+//     color: PropTypes.string,
+//     size: PropTypes.string,
+//     outline: PropTypes.bool
+// };
 
-Button.defaultProps = {
-    block: false,
-    color: 'primary',
-    size: 'normal',
-    outline: false
-}
+// Button.defaultProps = {
+//     block: false,
+//     color: 'primary',
+//     size: 'normal',
+//     outline: false
+// }
 
 export default Button;
