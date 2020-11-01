@@ -4,7 +4,7 @@ import { ButtonLink } from '../../components/atoms'
 import themeProp from '../../components/utils/theme';
 import { BsPlayFill } from 'react-icons/bs';
 
-export const HomeContainer = styled(Container)`
+export const StartQuizContainer = styled(Container)`
     max-width: 1010px;
     ${Container};
 `;

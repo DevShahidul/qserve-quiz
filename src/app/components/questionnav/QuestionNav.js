@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import {
     QuestionNavWrap,
     QuestionNavToggler,
@@ -10,13 +10,16 @@ import {
     QuestionLinkWrap,
     QuestionNavLink,
 } from './QuestionNav.elements';
-import data from './data';
 import {
     FaChevronRight,
     FaChevronLeft
 } from "react-icons/fa";
 
+import { QuizContext } from '../../../contex';
+
 export const QuestionNav = () => {
+    const value = useContext(QuizContext); // Get data from context   
+
     const [navToggleClick, setnavToggleClick] = useState(false);
     const handleQuestionNavToggle = () => {
         setnavToggleClick(!navToggleClick);
@@ -35,19 +38,19 @@ export const QuestionNav = () => {
                 </QuestionNavToggler>
                 <QuestionNavInner>
                 {
-                    data.map((chapter, index) => {
-                        const { id, info } = chapter;
+                    value.allData.map((data, index) => {
+                        const { lesson, quizItem } = data;
                         //console.log(chapter.info)
                         return (
                             <ChapterRow key={index}>
                                 <ChapterRowHeading>
-                                    Chapter: <span>{id}</span>
+                                    Lesson: <span>{lesson}</span>
                                 </ChapterRowHeading>
                                 <QuestionLinkWrap>
-                                    {info.map((item) => {
-                                        const { questionId, path } = item;
+                                    {quizItem.map((item) => {
+                                        const { id, slug } = item;
                                         return (
-                                            <QuestionNavLink  key={questionId} to={path}>{questionId}</QuestionNavLink>
+                                            <QuestionNavLink  key={id} to={slug}>{id}</QuestionNavLink>
                                         )
                                     })}
                                 </QuestionLinkWrap>

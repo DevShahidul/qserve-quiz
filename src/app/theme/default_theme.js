@@ -100,19 +100,18 @@ export const theme = {
 
     // Common style property
     common: {
-        containerWidth: '1270px',
         boxShadow: '0 10px 20px 0 rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.1)',
         gradientColor: 'linear-gradient(to top, #4fb6fc, #027adb)',
-        borderColor: 'rgba(102, 102, 102, .3)'
+        borderColor: 'rgba(102, 102, 102, .3)',
+        containerWidth: '1270px'
     },
 
     // Header style property
     header: {
-        padding: '10px',
         background: colors.whiteSmoke,
         color: colors.darkGray,
+        padding: '10px',
         fontSize: '16px',
-        stiky: false
     },
 
     // user style property
@@ -130,22 +129,22 @@ export const theme = {
             minWidth: '120px'
         },
         link:{
+            hoverBg: colors.whiteSmoke,
+            border: colors.darkWhiteSmoke,
             fontSize: '14px',
             padding: '7px 15px',
-            hoverBg: colors.whiteSmoke,
-            border: colors.darkWhiteSmoke
         }
     },
 
     // Question controller style property
     qzcontrols: {
-        togglerWidth: '27px',
-        togglerHeight: '25px',
-        iconSize: '16px',
         togglerBg: colors.secondary,
         togglerColor: colors.white,
         iconColor: colors.primary,
         background: colors.white,
+        togglerWidth: '27px',
+        togglerHeight: '25px',
+        iconSize: '16px',
         link: {
             color: colors.primary,
             background: colors.whiteSmoke,
@@ -163,68 +162,82 @@ export const theme = {
 
     // question nav style property
     questionnav: {
-        width: '320px',
         background: colors.white,
+        width: '320px',
         heading: {
             color: colors.primary,
             background: colors.darkWhiteSmoke,
-            fontSize: '',
-            fontWeight: '700'
         },
         link: {
-            size: '31px',
             color: colors.primary,
-            activeClolor: colors.darkWhiteSmoke,
-            fontSize: '12',
-            fontWeight: '400',
             background: colors.whiteSmoke,
             hoverBackground: colors.darkWhiteSmoke,
+            activeClolor: colors.darkWhiteSmoke,
+            size: '31px',
+            fontSize: '12px',
+            fontWeight: '400',
         }
     },
     
+    // Quiz style property
+    quiz: {
+        color: colors.primary,
+        title: {
+            background: colors.secondary,
+            color: colors.white
+        },
+        question: {
+            marginBottom: '15px'
+        },
+        // quizBrief: {
+        //     property: '',
+        // }
+    },
 
     // Title style property
     title: {
-        fontSize: '24px',
         textDark: colors.dark,
-        textLight: 'white',
         titleBg: colors.secondary,
+        textLight: 'white',
+        fontSize: '24px',
     },
 
     // Timer style property
     timer: {
-        color: '#1ab365',
-        padding: '8px 15px',
         background: 'white',
-        border: colors.borderLight
+        border: colors.borderLight,
+        color: '#1ab365',
+        padding: '8px 15px'
     },
 
     // Button style property
     button: {
-        btnRadius: '10px',
-        padding: '10px 15px',
-        fontSize: '16px',
         background: colors.primary,
         hoverBackground: colors.secondary,
-        color: colors.white
+        color: colors.white,
+        btnRadius: '10px',
+        padding: '10px 15px',
+        fontSize: '16px'
     },
 
     // Radio style property
     radio: {
         defaultBorder: colors.bodyLightColor,
+        active: colors.secondary,
         hoverBorder: colors.bodyColor,
         color: colors.bodyColor
     },
 
     // Checkbox style property
     check: {
-        size: '10px',
         defaultBorder: colors.bodyLightColor,
         hoverBorder: colors.bodyColor,
         color: colors.bodyColor,
+        size: '12px',
         fontSize: '14px',
         iconSize: '10px'
     },
+
 
     // Home page style property
     home: {

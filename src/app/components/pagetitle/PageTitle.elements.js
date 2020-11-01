@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import themeProp from '../../../components/utils/teme';
+import themeProp from '../../../components/utils/theme';
 
 export const Heading = styled.h1 `
     margin-top: 50px;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import themeProp from '../../../components/utils/teme';
+import themeProp from '../../../components/utils/theme';
 import { transition } from '../../../components/utils/style-util';
 import { Container } from '../../../globalStyles';
 import { FaUserAlt } from "react-icons/fa";

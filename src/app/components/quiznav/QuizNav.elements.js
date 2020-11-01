@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import themeProp from '../../../components/utils/teme';
+import themeProp from '../../../components/utils/theme';
 import { transition } from '../../../components/utils/style-util';
 
 export const QuizCtrlWrap = styled.div`
@@ -12,7 +12,7 @@ export const QuizCtrlWrap = styled.div`
     background-color: ${themeProp('qzcontrols', 'background')};
     box-shadow: ${themeProp('common', 'boxShadow')};
     padding: 20px 20px;
-    ${transition('.6')};
+    ${transition('width', '.6')};
     z-index: 99;
 `;
 
@@ -47,7 +47,7 @@ export const QzCtrilNavItemLink = styled(Link)`
     color: ${themeProp('qzcontrols.link', 'color')};
     white-space: nowrap;
     padding: 5px 0;
-    ${transition('.3')};
+    ${transition('all', '.3')};
     &:hover{
         background-color: ${themeProp('qzcontrols.link', 'hoverBackground')};
         & > div{
@@ -62,11 +62,10 @@ export const QzCtrlNavIcon = styled.div`
     justify-content: center;
     width: ${({qzctrlshow}) => (qzctrlshow ? '30px' : '40px')};
     height: ${({qzctrlshow}) => (qzctrlshow ? '30px' : '40px')};
-    ${transition('.3')};
+    ${transition('all', '.3')};
     background-color: ${themeProp('qzcontrols.icon', 'background')};
     font-size: ${({qzctrlshow}) => (qzctrlshow ? themeProp('qzcontrols.icon', 'expandSize') : themeProp('qzcontrols.icon', 'defaultSize'))};
     margin-right: ${({qzctrlshow}) => (qzctrlshow ? '15px' : '0px')};
-    ${transition(.3)};
 `;
 
 export const QzCtrlNavText = styled.span`
@@ -75,5 +74,5 @@ export const QzCtrlNavText = styled.span`
     transform: ${({qzctrlshow}) => (qzctrlshow ? 'translateX(0%)' : 'translateX(100%)')};
     opacity: ${({qzctrlshow}) => (qzctrlshow ? 1 : 0)};
     width: ${({qzctrlshow}) => (qzctrlshow ? 'auto' : '0px')};
-    ${transition(.3)};
+    ${transition('all', '.3')};
 `;

@@ -1,22 +1,22 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import themeProp from '../../../components/utils/teme';
+import themeProp from '../../../components/utils/theme';
 import { transition } from '../../../components/utils/style-util';
 
 export const QuestionNavWrap = styled.div`
   position: fixed;
-  top: 0;
+  top: 80px;
   left: ${({ navToggleClick }) => (navToggleClick ? "0" : "-320px")};
   width: ${themeProp('questionnav', 'width')};
-  height: 100vh;
+  height: calc(100vh - 80px);
   background-color: ${themeProp('questionnav', 'background')};
   box-shadow: ${themeProp('common', 'boxShadow')};
-  padding: 80px 0 50px;
+  padding-bottom:50px;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
   z-index: 95;
-  ${transition('0.6')};
+  ${transition('left', '.6')};
   @media only screen and (max-width: 767px){
       padding: 2.9375rem 0;
   }
@@ -99,6 +99,7 @@ export const QuestionNavLink = styled(Link)`
     overflow: hidden;
     color: ${themeProp('questionnav.link', 'color')};
     background-color: ${themeProp('questionnav.link', 'background')};
+    ${transition('all', '0.6')};
     &:hover{
         background-color: ${themeProp('questionnav.link', 'hoverBackground')};
     }

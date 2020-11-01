@@ -1,8 +1,10 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
+import {Route, Switch} from 'react-router-dom';
 import Theme from './app/theme';
 //import {Timer, Checkbox} from './components/atoms';
 import Home from './pages/home';
+import Startquiz from './pages/startquiz';
+import Quiz from './pages/quiz';
 import {Header} from './app/components';
 
 function App() {
@@ -10,7 +12,11 @@ function App() {
     <>
     <Theme>
       <Header/>
-      <Route exact to="/" component={Home} />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/start-quiz" component={Startquiz} />
+        <Route exact path="/quiz" component={Quiz} />
+      </Switch>
       {/* <Timer />
       <Checkbox/> */}
     </Theme>

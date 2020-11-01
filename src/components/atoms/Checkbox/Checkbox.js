@@ -8,7 +8,8 @@ import {
 export const Checkbox = ({
     onChange,
     checked,
-    name
+    name,
+    labelText
 }) => {
     return (
         <Label>
@@ -16,7 +17,7 @@ export const Checkbox = ({
             <Box>
                 <CheckIcon />
             </Box>
-            <span>Check item</span>
+            <span>{labelText}</span>
         </Label> 
     )
 }

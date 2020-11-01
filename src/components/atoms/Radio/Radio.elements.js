@@ -1,7 +1,6 @@
-import themeProp from '../../utils/theme';
 import styled from 'styled-components';
-import { GoCheck } from "react-icons/go";
-import {transition, boxShadow} from '../../utils/style-util';
+import themeProp from '../../utils/theme';
+import { transition, boxShadow } from '../../utils/style-util';
 
 export const Label = styled.label`
     display: flex;
@@ -34,22 +33,14 @@ export const Box = styled.div`
     ${transition('.3')};
 `;
 
-export const CheckIcon = styled(GoCheck)`
-    font-size: ${themeProp('check', 'iconSize')};
-    opacity: 0;
-    ${transition('.3')};
-`;
-
 export const CheckInput = styled.input.attrs({
-    type: 'checkbox'
+    type: 'radio'
 })`
     position: absolute;
     left: 0;
     opacity: 0;
     &:checked ~ div{
-        border-color: ${themeProp('check', 'hoverBorder')};
-        & > svg{
-            opacity: 1;
-        }
+        border-color: ${themeProp('check', 'active')};
+        background: ${themeProp('radio', 'active')}
     }
 `;

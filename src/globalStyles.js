@@ -1,5 +1,5 @@
 import styled, {createGlobalStyle} from 'styled-components';
-import themeProp from './components/utils/teme';
+import themeProp from './components/utils/theme';
 import { theme } from './app/theme/default_theme';
 import { transition } from './components/utils/style-util';
 
@@ -76,7 +76,7 @@ export const GlobalStyle = createGlobalStyle`
         color: ${inputField.color.primaryLight};
         line-height: 1.3;
         border: 1px solid ${inputField.color.primaryLight};
-        ${transition('.3')};
+        ${transition('all', '.3')};
         &:focus{
             outline: none;
             color: ${inputField.color.primary};
@@ -86,7 +86,7 @@ export const GlobalStyle = createGlobalStyle`
 
 `;
 
-const Transition = transition('.3');
+const Transition = transition('all', '.3');
 
 export const ButtonStyle = {
     display: 'flex',

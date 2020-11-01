@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import themeProp from '../../utils/teme';
+import themeProp from '../../utils/theme';
 
 export const TimerWrap = styled.div`
     display: inline-block;

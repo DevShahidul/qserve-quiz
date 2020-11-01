@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 //import PropTypes from 'prop-types';
-//import themeProp from '../../utils/teme';
+//import themeProp from '../../utils/theme';
 import { ButtonStyle, ButtonHoverStyle } from '../../../globalStyles';
 
 const Button = styled.button`
